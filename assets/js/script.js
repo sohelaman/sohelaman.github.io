@@ -128,16 +128,12 @@ function shout(data) {
 		data: data,
 		success: function(result) {
 			// console.log(result);
-			if( result.success == true ) {
-    		$('#msgModal form').fadeOut(600);
-				modTitle.html('Thank you! <span class="fa fa-heart"></span>');
-				setTimeout(function(){
-					$('#msgModal').foundation('reveal', 'close');
-				}, 3000);
-			} else {
-				modTitle.html("Something's wrong, I cound't hear you! :(");
-			}
-  	},
+			$('#msgModal form').fadeOut(600);
+			modTitle.html('Thank you! <span class="fa fa-heart"></span>');
+			setTimeout(function(){
+				$('#msgModal').foundation('reveal', 'close');
+			}, 3000);
+  		},
   	error: function() {
     	modTitle.html('Could not send! Please try again.');
     }
