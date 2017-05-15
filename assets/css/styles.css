@@ -84,7 +84,7 @@ ul.social li {
 }
 
 .fa:hover {
-	color: green;
+	color: #BF4444;
 }
 
 .fa-github {
@@ -103,12 +103,20 @@ ul.social li {
   color: #E45151;
 }
 
-.redness {
+.redness, .redness:focus, .redness:visited {
 	background-color: #E45151;
 }
 
 .redness:hover {
 	background-color: #BF4444;
+}
+
+.blueness, .blueness:focus, .blueness:visited {
+  background-color: #008CBA;
+}
+
+.blueness:hover {
+  background-color: #007095;
 }
 
 .err {
