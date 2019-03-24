@@ -10,7 +10,7 @@ body, h2 {
 }
 
 input[type=text]:focus, textarea:focus {
-  border: 1px solid #008CBA;
+	border: 1px solid #008CBA;
 }
 
 .reveal-modal h2 {
@@ -20,19 +20,19 @@ input[type=text]:focus, textarea:focus {
 
 img.grayscale {
 	-webkit-filter: grayscale(100%);
-  -webkit-transition: all .6s ease;
-  -webkit-backface-visibility: hidden;
-  -moz-transition: .6s;
+	-webkit-transition: all .6s ease;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: .6s;
 }
 
 img.grayscale:hover {
-  -webkit-filter: grayscale(0%);
+	-webkit-filter: grayscale(0%);
 }
 
 .greets {
 	text-align: center;
 	color: midnightblue;
-  font-size: 36px;
+	font-size: 36px;
 }
 
 .subgreet {
@@ -44,6 +44,7 @@ img.grayscale:hover {
 }
 
 .my-avatar {
+	display: none;
 	height: 140px;
 	width: 140px;
 	border-radius: 50%;
@@ -88,19 +89,19 @@ ul.social li {
 }
 
 .fa-github {
-  color: #171515;
+	color: #171515;
 }
 
 .fa-facebook {
-  color: #3B5998;
+	color: #3B5998;
 }
 
 .fa-linkedin {
-  color: #007BB5;
+	color: #007BB5;
 }
 
 .fa-heart {
-  color: #E45151;
+	color: #E45151;
 }
 
 .redness, .redness:focus, .redness:visited {
@@ -112,11 +113,11 @@ ul.social li {
 }
 
 .blueness, .blueness:focus, .blueness:visited {
-  background-color: #008CBA;
+	background-color: #008CBA;
 }
 
 .blueness:hover {
-  background-color: #007095;
+	background-color: #007095;
 }
 
 .err {
