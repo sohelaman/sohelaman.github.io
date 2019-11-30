@@ -113,6 +113,9 @@ let quasiWeirdObject = {
    */
   shout: function (data) {
     let modTitle = $('#msgModal #modalTitle');
+    $('body').addClass('waiting');
+    $('.form-buttons').slideUp();
+    $('form .form-input').prop("disabled", true);
     $.ajax({
       url: "https://lehos.000webhostapp.com/shout.php",
       type: "POST",
@@ -122,8 +125,12 @@ let quasiWeirdObject = {
         modTitle.html('Thank you! <span class="fa fa-heart"></span>');
         setTimeout(() => { $('#msgModal form').slideUp(600); }, 1000);
         setTimeout(() => { $('#msgModal').foundation('close'); }, 3000);
+        $('body').removeClass('waiting');
       }, error: () => {
-        modTitle.html('<span class="err">Could not send! Please try again.</span>');
+        modTitle.html('<span class="err">Couldn\'t send! Please try again.</span>');
+        $('body').removeClass('waiting');
+        $('.form-buttons').slideDown();
+        $('form .form-input').prop("disabled", false);
       }
     });
   }, // end of shout()
