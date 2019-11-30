@@ -4,8 +4,8 @@
   "description": "Sohel's Github page.",
   "main": "src/index.html",
   "scripts": {
-    "build": "parcel build src/index.html -d docs",
-    "watch": "parcel watch src/index.html -d docs"
+    "build": "parcel build src/index.html -d .",
+    "watch": "parcel watch src/index.html -d ."
   },
   "keywords": [],
   "author": "Sohel Aman",
