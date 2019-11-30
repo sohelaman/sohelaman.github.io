@@ -1,0 +1,156 @@
+/* app.scss */
+
+/* imports */
+@import "./variables.scss", "./mixins.scss";
+
+/* styles */
+body,
+h2 {
+  font-family: $font-primary;
+  color: $font-color-primary;
+}
+
+.center-vertically {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.button,
+.button-group .button {
+  font-family: $font-buttons;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  padding: 10px 20px;
+}
+
+.button-first {
+  @include radius-left(40px);
+}
+.button-last {
+  @include radius-right(40px);
+}
+
+.my-avatar,
+.my-avatar-proxy {
+  display: none;
+  height: $avatar-height;
+  width: $avatar-width;
+  border-radius: 50%;
+  border: 3px solid $white;
+}
+
+.my-avatar-proxy {
+  display: block;
+}
+
+.absolute {
+  position: absolute;
+  z-index: 1;
+}
+
+.padded {
+  padding-top: $avatar-height;
+}
+
+.lines {
+  padding-top: 14px;
+  padding-bottom: 20px;
+  font-size: 2rem;
+}
+
+#line1 + .line1-proxy,
+#line2 + .line2-proxy {
+  /* used as a placeholder to fix the jumping issue. */
+  display: none;
+}
+
+#line1:empty + .line1-proxy,
+#line2:empty + .line2-proxy {
+  /* works as a placeholder for line1/line2 when it is empty. */
+  display: block;
+}
+
+.redness {
+  background-color: $red;
+  &:focus,
+  &:visited {
+    background-color: $red;
+  }
+  &:hover {
+    background-color: $slightly-darker-red;
+  }
+}
+
+.blueness {
+  background-color: $blue;
+  &:focus,
+  &:visited {
+    background-color: $blue;
+  }
+  &:hover {
+    background-color: $slightly-darker-blue;
+  }
+}
+
+.fa:hover {
+  color: $slightly-darker-red;
+}
+
+.fa-github {
+  color: $dark-grey;
+}
+
+.fa-linkedin {
+  color: $color-linkedin;
+}
+
+.fa-heart {
+  color: $red;
+}
+
+.err,
+.color-red {
+  color: $red;
+}
+
+.input-err {
+  border-color: $red;
+}
+
+ul.social {
+  text-decoration: none;
+  list-style: none;
+  margin-left: -18px;
+  font-size: 1.2rem;
+}
+
+ul.social li {
+  display: inline;
+  padding: 4px;
+}
+
+.subtext,
+.sarcasm {
+  display: none;
+}
+
+#modalTitle {
+  padding-top: 12px;
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .lines {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .reveal {
+    overflow-y: hidden;
+  }
+}
