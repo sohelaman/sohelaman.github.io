@@ -41,33 +41,49 @@ let quasiWeirdObject = {
   }, // end of cutTheBeep()
 
   /**
+   * Check if mobile devices.
+   */
+  isMobile: function () {
+    return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  },
+
+  /**
    * Chameleon
    */
   catchMe: function () {
     let $elmAvatar = $('#my-avatar');
     $elmAvatar.fadeIn();
-    $elmAvatar.mouseover(function () {
-      let $el = $(this);
-      if (!$el.hasClass('absolute')) $el.addClass('absolute');
-      $('.my-avatar-proxy').removeClass('hide');
 
-      if ($(".main #my-avatar").length) {
-        let element = $el.detach();
-        $('body').append(element);
-      }
+    if (this.isMobile()) {
+      $elmAvatar.on('click', function () {
+        let $el = $(this);
+        let borderColor = '#' + ((1 << 24) * Math.random() | 0).toString(16);
+        $el.css('border-color', borderColor);
+      });
+    } else {
+      $elmAvatar.on('mouseover', function () {
+        let $el = $(this);
+        let borderColor = '#' + ((1 << 24) * Math.random() | 0).toString(16);
+        $el.css('border-color', borderColor);
 
-      let threshold = 6;
-      let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - threshold - $el.width();
-      let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - threshold - $el.height();
+        if (!$el.hasClass('absolute')) $el.addClass('absolute');
+        $('.my-avatar-proxy').removeClass('hide');
 
-      let left = Math.floor(Math.random() * w);
-      let top = Math.floor(Math.random() * h);
+        if ($(".main #my-avatar").length) {
+          let element = $el.detach();
+          $('body').append(element);
+        }
 
-      $el.animate({ left: left, top: top }, 100);
+        let threshold = 6;
+        let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - threshold - $el.width();
+        let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - threshold - $el.height();
 
-      let borderColor = '#' + ((1 << 24) * Math.random() | 0).toString(16);
-      $el.css('border-color', borderColor);
-    });
+        let left = Math.floor(Math.random() * w);
+        let top = Math.floor(Math.random() * h);
+
+        $el.animate({ left: left, top: top }, 100);
+      });
+    }
   }, // end of catchMe()
 
   /**
