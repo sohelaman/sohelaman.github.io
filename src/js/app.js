@@ -133,9 +133,14 @@ let quasiWeirdObject = {
     $('.form-buttons').slideUp();
     $('form .form-input').prop("disabled", true);
     $.ajax({
-      url: "https://lehos.000webhostapp.com/shout.php",
-      type: "POST",
+      url: 'https://dev-lehos.pantheonsite.io/shout/',
+      type: 'POST',
       data: data,
+      headers: {
+        'Content-Type':'application/json',
+        'Access-Control-Allow-Origin': location.origin,
+        'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Access-Control-Request-Origin',
+      },
       success: result => {
         // console.log(result);
         modTitle.html('Thank you! <span class="fa fa-heart"></span>');
