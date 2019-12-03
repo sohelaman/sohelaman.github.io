@@ -135,7 +135,7 @@ let quasiWeirdObject = {
     $.ajax({
       url: 'https://dev-lehos.pantheonsite.io/shout/',
       type: 'POST',
-      data: data,
+      data: JSON.stringify(data),
       headers: {
         'Content-Type':'application/json',
         'Access-Control-Allow-Origin': location.origin,
