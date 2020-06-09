@@ -133,7 +133,7 @@ let quasiWeirdObject = {
     $('.form-buttons').slideUp();
     $('form .form-input').prop("disabled", true);
     $.ajax({
-      url: 'https://dev-lehos.pantheonsite.io/shout/',
+      url: 'https://sohel.atwebpages.com/gh-page.php',
       type: 'POST',
       data: JSON.stringify(data),
       headers: {
