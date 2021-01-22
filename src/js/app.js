@@ -139,6 +139,7 @@ let quasiWeirdObject = {
         $('form .form-input').prop("disabled", true);
 
         // netlify
+        data['form-name'] = 'Shout';
         fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },

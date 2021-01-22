@@ -44,6 +44,7 @@
     <div class="reveal" id="msgModal" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
         <h2 id="modalTitle">Write me, it's easy! <span class="err sarcasm">Or, is it?</span></h2>
         <form id="shoutForm" class="shout" method="POST" netlify>
+            <input type="hidden" name="form-name" value="Shout">
             <input class="form-input" type="text" name="name" placeholder="Name *" required>
             <input class="form-input" type="text" name="email" placeholder="Email *" required>
             <textarea class="form-input" name="message" placeholder="Message *" rows="8" required></textarea>
