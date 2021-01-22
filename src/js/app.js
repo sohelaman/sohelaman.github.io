@@ -21,9 +21,14 @@ let quasiWeirdObject = {
     bindings: function () {
         this.catchMe();
 
-        $('#shout-send').on('click', () => {
+        $('#shoutForm').on('submit', e => {
+            e.preventDefault();
             this.validate();
         });
+
+        /* $('#shout-send').on('click', () => {
+            this.validate();
+        }); */
 
         $('#shout-reset').on('click', () => {
             let form = $('#msgModal form');
@@ -134,14 +139,23 @@ let quasiWeirdObject = {
         $('form .form-input').prop("disabled", true);
 
         // netlify
-        let form = $('#msgModal form');
-        form[0].submit();
-        setTimeout(() => {
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(data).toString()
+        }).then(() => {
+            // console.log('Form successfully submitted');
             modTitle.html('Thank you! <span class="fa fa-heart"></span>');
             setTimeout(() => { $('#msgModal form').slideUp(600); }, 1000);
             setTimeout(() => { $('#msgModal').foundation('close'); }, 3000);
             $('body').removeClass('waiting');
-        }, 1500);
+        }).catch(error => {
+            console.log('Form submit failed', error);
+            modTitle.html('<span class="err">Couldn\'t send! Please try again.</span>');
+            $('body').removeClass('waiting');
+            $('.form-buttons').slideDown();
+            $('form .form-input').prop("disabled", false);
+        });
 
         /* $.ajax({
             url: 'http://sohel.atwebpages.com/gh-page.php',
