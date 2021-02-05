@@ -1,18 +1,20 @@
 {
-  "name": "sohelaman.github.io",
-  "version": "2.0.0",
-  "description": "Sohel's Github page.",
+  "name": "whoami",
+  "version": "3.0.0",
+  "description": "whoami",
   "main": "src/index.html",
   "scripts": {
     "build": "parcel build src/index.html",
     "watch": "parcel watch src/index.html"
   },
   "keywords": [],
-  "author": "Sohel Aman",
-  "license": "ISC",
+  "author": "Sohel",
   "devDependencies": {
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.23.7"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
   }
 }
