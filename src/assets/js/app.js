@@ -29,6 +29,8 @@ let quasiWeirdObject = {
      * Firebase.
      */
     setupFirebase: function () {
+        let that = this;
+
         let firebaseConfig = {
             apiKey: "AIzaSyBtgGtB8g78yWR0EFHe-OmCcU-HPL1N18Q",
             authDomain: "whoami-101.firebaseapp.com",
@@ -41,6 +43,7 @@ let quasiWeirdObject = {
 
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
+        // const analytics = firebase.analytics;
 
         let db = firebase.firestore();
 
@@ -88,6 +91,11 @@ let quasiWeirdObject = {
         $('#contact-form').submit(function (e) {
             e.preventDefault();
 
+            $(this).find('input,textarea').attr('disabled', true);
+            that.showLoader();
+
+            firebase.analytics().logEvent('screen_view', { screen_name: 'contact-form-submission' });
+
             let data = $(this).serializeArray().reduce(function (obj, item) {
                 obj[item.name] = item.value;
                 return obj;
@@ -100,6 +108,7 @@ let quasiWeirdObject = {
                 .then((docRef) => {
                     console.log("Submission ID: ", docRef.id);
                     $(this).unbind('submit').submit();
+                    that.hideLoader();
                 })
                 .catch((error) => {
                     console.error("Error adding document: ", error);
@@ -112,6 +121,16 @@ let quasiWeirdObject = {
      */
     isMobile: function () {
         return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    },
+
+    showLoader: function () {
+        $("#spinner-back").addClass("show");
+        $("#spinner-front").addClass("show");
+    },
+
+    hideLoader: function () {
+        $("#spinner-back").removeClass("show");
+        $("#spinner-front").removeClass("show");
     },
 
     /**
