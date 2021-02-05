@@ -91,7 +91,7 @@ let quasiWeirdObject = {
         $('#contact-form').submit(function (e) {
             e.preventDefault();
 
-            $(this).find('input,textarea').attr('disabled', true);
+            // $(this).find('input,textarea').attr('disabled', true);
             that.showLoader();
 
             firebase.analytics().logEvent('screen_view', { screen_name: 'contact-form-submission' });
