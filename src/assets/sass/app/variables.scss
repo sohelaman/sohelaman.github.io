@@ -1,0 +1,27 @@
+/* variables.scss */
+
+/* breakpoint */
+$breakpoint-tablet: 960px;
+
+/* fonts */
+$font-fallback: sans-serif;
+$font-primary: "Josefin Sans", $font-fallback;
+$font-buttons: "Bree Serif", $font-fallback;
+
+/* colors */
+$white: white;
+$red: #e45151;
+$slightly-darker-red: #bf4444;
+$blue: #008cba;
+$slightly-darker-blue: #007095;
+$dark-grey: #171515;
+$color-linkedin: #007bb5;
+$font-color-primary: midnightblue;
+
+/* sizes */
+$button-font-size: 18px;
+$button-line-height: 1.6;
+
+/* misc */
+$avatar-height: 5.3rem;
+$avatar-width: 5.3rem;

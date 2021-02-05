@@ -15,6 +15,9 @@
     "sass": "^1.23.7"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "firebase": "^8.2.6",
+    "jquery": "^3.4.1",
+    "js-cookie": "^2.2.1",
+    "theaterjs": "^3.2.0"
   }
 }

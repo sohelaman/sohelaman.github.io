@@ -1,0 +1,36 @@
+/* app.scss */
+
+/* imports */
+@import "./variables.scss", "./mixins.scss";
+
+.hide {
+  display: none;
+}
+
+.logo {
+  border: none!important;
+  // border: 1px solid $white;
+  width: 8rem!important;
+  height: 8rem!important;
+}
+
+// #header nav.use-middle:after, #header nav.use-middle:before {
+//   display: none!important;
+// }
+
+.my-avatar {
+  // display: none;
+  height: inherit;
+  width: inherit;
+  border-radius: 50%;
+  border: 1px solid $white;
+  // box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+}
+
+// .menu-item {
+//   display: none;
+// }
+
+.design-credit {
+  display: none;
+}
