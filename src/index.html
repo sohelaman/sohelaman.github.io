@@ -74,7 +74,7 @@
 			<article id="contact">
 				<h2 class="major">Contact</h2>
 				<p class="page-body"></p>
-				<form id="contact-form" method="post" action="#thanks" netlify>
+				<form id="contact-form" method="post" action="#thanks" data-netlify-recaptcha="true" netlify>
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
@@ -87,6 +87,9 @@
 						<div class="field">
 							<label for="message">Message</label>
 							<textarea name="message" id="message" rows="4" required></textarea>
+						</div>
+						<div class="field">
+							<div data-netlify-recaptcha="true"></div>
 						</div>
 					</div>
 					<ul class="actions">

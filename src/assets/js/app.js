@@ -64,7 +64,7 @@ let quasiWeirdObject = {
                 pages.push(doc.data());
             });
 
-            console.log('pages', pages);
+            // console.log('pages', pages);
 
             pages.forEach(item => {
                 let $elmPage = $('#' + item.slug);
